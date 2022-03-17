@@ -2,6 +2,7 @@
 // `ng build` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
+/* Aquí colocamos las credenciales de nuestra BD en Firebase */
 export const environment = {
   production: false,
   firebaseDB : {

@@ -1,1 +1,25 @@
-<p>agregar works!</p>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div *ngIf="!datosSuministrados">
+        <div class="form-group">
+          <label for="titulo">Titulo:</label>
+          <input type="text" name="titulo" id="titulo" class="form-control" [(ngModel)]="libro.titulo">
+        </div>
+        <div *ngIf="!datosSuministrados">
+          <div class="form-group">
+            <label for="descripcion">Descripción:</label>
+            <input type="text" name="descripcion" id="descripcion" class="form-control" [(ngModel)]="libro.descripcion">
+          </div>
+        </div>
+      </div>
+      <button class="btn btn-success mt-3" (click)="guardarLibrosCreados()">Crear</button>
+    </div>
+    
+    <div *ngIf="datosSuministrados">
+        <h4>Los datos fueron creados con éxito</h4>
+        <button class="btn btn-primary" (click)="nuevoLibro()">Nuevo Libro</button>
+    </div>
+
+  </div>
+</div>
