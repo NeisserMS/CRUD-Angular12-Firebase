@@ -1,0 +1,109 @@
+<div class="container">
+  <div class="card mt-3">
+    <div class="card-header">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+        class="bi bi-chevron-compact-right" viewBox="0 0 16 16">
+        <path fill-rule="evenodd"
+          d="M6.776 1.553a.5.5 0 0 1 .671.223l3 6a.5.5 0 0 1 0 .448l-3 6a.5.5 0 1 1-.894-.448L9.44 8 6.553 2.224a.5.5 0 0 1 .223-.671z" />
+      </svg> NUEVO CURSO
+    </div>
+    <div class="card-body">
+      <form>
+        <div class="row">
+          <div class="col-6">
+            <div *ngIf="!datosSuministrados">
+              <div class="form-group">
+                <input class="form-control" type="text" name="titulo" placeholder="titulo" id="titulo"
+                  [(ngModel)]="libro.titulo" required>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6">
+            <div *ngIf="!datosSuministrados">
+              <div class="form-group">
+                <input class="form-control" type="text" name="descripcion" placeholder="descripcion" id="descripcion"
+                  [(ngModel)]="libro.descripcion" required>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <p class="text-center mt-2">
+
+          <button type="submit" class="btn btn-primary btn-raised btn-sm" (click)="guardarLibrosCreados()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+              class="bi bi-bookmark-fill" viewBox="0 0 16 16">
+              <path
+                d="M2 2v13.5a.5.5 0 0 0 .74.439L8 13.069l5.26 2.87A.5.5 0 0 0 14 15.5V2a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2z" />
+            </svg> GUARDAR
+          </button>
+        </p>
+      </form>
+    </div>
+  </div>
+
+  <div class="container text-center">
+    <div *ngIf="datosSuministrados">
+      <h4>Los datos fueron creados con éxito</h4>
+      <button class="btn btn-success" (click)="nuevoLibro()"> <svg xmlns="http://www.w3.org/2000/svg" width="16"
+          height="16" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
+          <path
+            d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
+        </svg> Nuevo Libro</button>
+    </div>
+  </div>
+</div>
+
+
+<!-- MODAL-->
+<!-- <a href="#modalDelivery" data-toggle="modal"></a>
+
+<div class="modal" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title"> Curso Creado!</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Sirvase pasar a la lista.</p>
+      </div>
+      <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary"> CERRAR </button>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+
+
+<!--
+  <div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div *ngIf="!datosSuministrados">
+        <div class="form-group">
+          <label for="titulo">Titulo:</label>
+          <input type="text" name="titulo" id="titulo" class="form-control" [(ngModel)]="libro.titulo">
+        </div>
+        <div *ngIf="!datosSuministrados">
+          <div class="form-group">
+            <label for="descripcion">Descripción:</label>
+            <input type="text" name="descripcion" id="descripcion" class="form-control" [(ngModel)]="libro.descripcion">
+          </div>
+        </div>
+      </div>
+
+      <button class="btn btn-success mt-3" (click)="guardarLibrosCreados()"> Crear</button>
+    </div>
+
+    <div *ngIf="datosSuministrados">
+        <h4>Los datos fueron creados con éxito</h4>
+        <button class="btn btn-primary"  (click)="nuevoLibro()">Nuevo Libro</button>
+    </div>
+
+  </div>
+</div> -->

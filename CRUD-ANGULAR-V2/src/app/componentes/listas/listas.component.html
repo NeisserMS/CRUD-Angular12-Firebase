@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="list row">
+    <div class="col-md-12">
+      <h4>Lista de Libros</h4>
+      <ul class="list-group">
+        <li class="list-group-item mt-1" *ngFor="let libro of libreria; let i = index" [class.active]=" i == libroIndex"
+          (click)="configLibreria(libro, i)">
+          {{libro.titulo}}
+        </li>
+      </ul>
+      <button class="btn btn-danger" (click)="eliminarAll()">Borrar Todo</button>
+    </div>
+    <div class="col-6">
+      <div *ngIf="libroDeLibreria">
+      </div>
+    </div>
+    <div class="col" *ngIf="!libroDeLibreria">
+      <h5>Por favor Selecciona un libro</h5>
+    </div>
+  </div>
+</div>
