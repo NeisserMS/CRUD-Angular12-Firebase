@@ -37,12 +37,31 @@ export class ListasComponent implements OnInit {
         map((cambiar) =>
           cambiar.map( c => ({
             id: c.payload.key, // payload = recargado
-            ...c.payload.val(), // los ... es para traer todos los valores de un Array
+            ...c.payload.val(), // los ... es para traer todos los valores de un Array  otro payload porque es pre cargado.
           }))
         )
       )
       .subscribe(data => {
-        this.libreria = data;
+        this.libreria = data; // Quiero que los datos se almacene en libreria que sera igual a los datos traidos desde la base de datos.
       })
+  }
+
+  setActiveTutorial(tutorial: Libros, index: number):void{
+    this.libroDeLibreria = tutorial;
+    this.libroIndex = index;
+  }
+
+   // Configuración
+
+   configLibreria(libreria: Libros, index: number):void {
+      this.libroDeLibreria = libreria;
+      this.libroIndex = index;
+   }
+
+
+  eliminarAll():void{
+    this.librosServices.deleteAll().then(()=> this.
+    refrescarLibros())
+    .catch(err => console.log(err)) // Capturamos los errores.
   }
 }
